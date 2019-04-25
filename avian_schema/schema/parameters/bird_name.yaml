@@ -1,0 +1,8 @@
+BirdName:
+  name: bird_name
+  type: string
+  minLength: 1
+  maxLength: 128
+  description: Unique name associated with the bird
+  in: path
+  required: true

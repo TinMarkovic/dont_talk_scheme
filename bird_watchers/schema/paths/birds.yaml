@@ -1,0 +1,40 @@
+/birds:
+  get:
+    summary: Get list of all birds in DB
+    tags:
+      - birds
+    operationId: bird_watchers.handlers.birds.get_all
+    responses:
+      "200":
+        description: Operation succeeded, array of all accounts
+        schema:
+          type: object
+          properties:
+            birds:
+              description: List of all birds
+              type: array
+              items:
+                $ref: "#/definitions/Bird"
+      default:
+        description: Probably an error
+
+/birds/{bird_name}:
+  parameters:
+    - $ref: "#/parameters/BirdName"
+  get:
+    summary: Get a specific bird
+    tags:
+      - birds
+    operationId: bird_watchers.handlers.birds.get_one
+    responses:
+      "200":
+        description: Operation succeeded, a bird
+        schema:
+          type: object
+          properties:
+            bird:
+              $ref: "#/definitions/Bird"
+      "401":
+        description: Request is not authorized
+      default:
+        description: Probably an error

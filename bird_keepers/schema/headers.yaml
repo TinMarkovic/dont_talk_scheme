@@ -1,0 +1,14 @@
+swagger: "2.0"
+info:
+  title: Bird Keepers
+  description: An API for registering kept birds.
+  contact:
+    name: Birdkeepers Assoc
+  version: "0.0.1"
+basePath: /birdkeepers
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json

@@ -1,0 +1,18 @@
+/birds:
+  post:
+    summary: Create new owned bird
+    tags:
+      - accounts
+    operationId: bird_keepers.handlers.birds.register
+    parameters:
+      - name: owned_bird
+        in: body
+        schema:
+          $ref: '#/definitions/OwnedBird'
+    responses:
+      "200":
+        description: Operation succeeded, created account
+        schema:
+          $ref: '#/definitions/OwnedBird'
+      default:
+        description: Probably an error

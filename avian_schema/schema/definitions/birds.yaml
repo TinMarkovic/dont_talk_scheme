@@ -1,0 +1,28 @@
+Bird:
+  type: object
+  properties:
+    name:
+      type: string
+      minLength: 1
+      maxLength: 128
+      description: Unique name associated with the bird
+      example: Eurasian three-toed woodpecker
+    wingspan:
+      type: number
+      example: 42
+      description: How wide is the wingspan of this bird, in cm
+    nest:
+      $ref: '#/definitions/Nest'
+
+Nest:
+  type: object
+  description: Properties of the birds nest
+  properties:
+    type:
+      type: string
+      description: What kind of nest does the bird build
+      enum: [platform, bowl, cavity, universal]
+    terrain:
+      type: string
+      description: Where does the bird nest
+      enum: [swamp, plain, forest, universal]
