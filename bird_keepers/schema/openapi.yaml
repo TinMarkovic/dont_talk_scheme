@@ -16,7 +16,7 @@ paths:
               $ref: "#/components/schemas/OwnedBird"
       responses:
         "200":
-          description: Operation succeeded, created account
+          description: Operation succeeded, registered an owned bird
           content:
             application/json:
               schema:
