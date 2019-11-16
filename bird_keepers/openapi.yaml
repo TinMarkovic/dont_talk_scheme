@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  contact:
+    name: Birdkeepers Assoc
+  description: An API for registering kept birds.
+  title: Bird Keepers
+  version: 0.0.1
+paths:
+  /birds:
+    post:
+      operationId: bird_keepers.handlers.birds.register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OwnedBird"
+      responses:
+        "200":
+          description: Operation succeeded, registered an owned bird
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OwnedBird"
+        default:
+          description: Probably an error
+      summary: Create new owned bird
+      tags:
+        - accounts
+tags:
+  - description: Avian endpoints
+    name: birds
+servers:
+  - url: /birdkeepers
+components:
+  schemas:
+    OwnedBird:
+      properties:
+        bird:
+          $ref: "../avian_schema/base.yaml#Bird"
+        owner_name:
+          description: Who owns this bird
+          example: Rasputin
+          type: string
+      type: object
