@@ -1,6 +1,7 @@
 # Dont talk, scheme
 
-Repository for the examples provided in the talk.
+More about this talk at [my website: tinthe.dev ](https://tinthe.dev/talks/schema-composition).
+This is the repository for examples provided in the talk.
 
 # Running the project
 
