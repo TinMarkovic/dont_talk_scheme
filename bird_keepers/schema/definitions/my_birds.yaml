@@ -1,9 +1,0 @@
-OwnedBird:
-  type: object
-  properties:
-    bird:
-      $ref: '#/definitions/Bird'
-    owner_name:
-      type: string
-      description: Who owns this bird
-      example: Rasputin
